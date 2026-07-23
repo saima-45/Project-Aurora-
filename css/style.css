@@ -1,1 +1,829 @@
+/* =====================================================
+   PROJECT AURORA V7
+===================================================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:#050816;
+
+    color:#ffffff;
+
+    overflow:hidden;
+
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-100;
+
+    background:
+    linear-gradient(
+        180deg,
+        #050816 0%,
+        #081229 55%,
+        #101d42 100%
+    );
+
+}
+
+/* Aurora */
+
+#aurora{
+
+    position:absolute;
+
+    width:180%;
+
+    height:180%;
+
+    top:-40%;
+
+    left:-40%;
+
+    opacity:.45;
+
+    filter:blur(110px);
+
+    background:
+
+        radial-gradient(circle,#54ffd9 0%,transparent 35%),
+
+        radial-gradient(circle,#5a7bff 0%,transparent 35%),
+
+        radial-gradient(circle,#ff7ef8 0%,transparent 30%);
+
+    animation:auroraMove 18s ease-in-out infinite alternate;
+
+}
+
+/* =====================================================
+   STARS
+===================================================== */
+
+#stars{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+#stars::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        radial-gradient(#ffffff 1px,transparent 1px);
+
+    background-size:42px 42px;
+
+    opacity:.45;
+
+}
+
+#stars::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        radial-gradient(#ffffff 1px,transparent 1px);
+
+    background-size:80px 80px;
+
+    opacity:.18;
+
+}
+
+/* =====================================================
+   FLOATING PARTICLES
+===================================================== */
+
+#particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050816;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:99999;
+
+    transition:1s;
+
+}
+
+#loader h1{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:4rem;
+
+    color:white;
+
+}
+
+#loader p{
+
+    margin-top:20px;
+
+    color:#dddddd;
+
+}
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+#musicButton{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    z-index:1000;
+
+}
+
+#musicButton:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* =====================================================
+   APP
+===================================================== */
+
+#app{
+
+    width:100%;
+
+    height:100vh;
+
+    position:relative;
+
+}
+
+/* =====================================================
+   SCENES
+===================================================== */
+
+.scene{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    opacity:0;
+
+}
+
+.scene.active{
+
+    display:flex;
+
+    opacity:1;
+
+    animation:fadeScene .8s ease;
+
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+
+    width:100%;
+
+    max-width:1000px;
+
+    text-align:center;
+
+}
+
+h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:4.3rem;
+
+    margin-bottom:25px;
+
+}
+
+h2{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:3rem;
+
+    color:#ffd8ff;
+
+    margin-bottom:25px;
+
+}
+
+p{
+
+    line-height:1.9;
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:#eeeeee;
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+#startBtn,
+#readLetter,
+#continueJourney,
+#toStars,
+#toGift,
+#toFinale,
+#replay{
+
+    margin-top:35px;
+
+    padding:16px 36px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #7d6dff,
+        #55d8ff
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    box-shadow:
+
+    0 12px 35px rgba(90,180,255,.35);
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+/* =====================================================
+   BIRTHDAY SECTION
+===================================================== */
+
+.container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:70px;
+
+    flex-wrap:wrap;
+
+}
+
+.photo-frame{
+
+    width:340px;
+
+    height:440px;
+
+    padding:10px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+    animation:floatImage 5s ease-in-out infinite;
+
+}
+
+.photo-frame img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    display:block;
+
+}
+
+.hero-text{
+
+    max-width:520px;
+
+}
+
+.hero-text p{
+
+    margin-top:20px;
+
+}
+
+/* =====================================================
+   LETTER POPUP
+===================================================== */
+
+#letterOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+
+    z-index:9999;
+
+}
+
+.letter-card{
+
+    width:min(750px,95vw);
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+        0 25px 80px rgba(0,0,0,.5);
+
+    position:relative;
+
+}
+
+#closeLetter{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:20px;
+
+}
+
+#letterBody{
+
+    margin-top:25px;
+
+    white-space:pre-wrap;
+
+    line-height:2;
+
+    color:#fff;
+
+    min-height:260px;
+
+    font-size:1.05rem;
+
+}
+
+/* =====================================================
+   MEMORY GALLERY
+===================================================== */
+
+.memory-container{
+
+    width:100%;
+
+    max-width:760px;
+
+    margin:40px auto;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.4);
+
+}
+
+#memoryImage{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.memory-info{
+
+    padding:25px;
+
+}
+
+.memory-info h3{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+    font-family:"Cormorant Garamond",serif;
+
+}
+
+.memory-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+
+}
+
+.memory-buttons button{
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+}
+
+#memoryCounter{
+
+    font-weight:600;
+
+    color:#8fdfff;
+
+    min-width:70px;
+
+    text-align:center;
+
+}
+/* =====================================================
+   CONSTELLATION
+===================================================== */
+
+#constellation{
+    width:100%;
+    max-width:700px;
+    margin:50px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.star{
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:50%;
+    font-size:2rem;
+    background:rgba(255,255,255,.12);
+    color:#ffe66d;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 25px rgba(255,230,109,.4);
+    transition:.3s;
+}
+
+.star:hover{
+    transform:scale(1.15);
+    box-shadow:0 0 40px rgba(255,230,109,.8);
+}
+
+.star.active{
+    background:#ffe66d;
+    color:#222;
+}
+
+#wishBox{
+    margin:40px auto;
+    max-width:700px;
+    min-height:100px;
+    padding:25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+    line-height:1.8;
+}
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+#giftBox{
+    font-size:8rem;
+    cursor:pointer;
+    transition:.5s;
+    animation:giftFloat 3s ease-in-out infinite;
+    user-select:none;
+}
+
+#giftBox:hover{
+    transform:scale(1.1) rotate(-8deg);
+}
+
+#giftMessage{
+    margin:40px auto;
+    max-width:700px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+#giftMessage h3{
+    font-size:2.2rem;
+    margin-bottom:20px;
+    color:#ffd8ff;
+}
+
+/* =====================================================
+   FINALE
+===================================================== */
+
+#finale h1{
+    font-size:5rem;
+}
+
+#finale h3{
+    margin-top:35px;
+    font-family:"Great Vibes",cursive;
+    font-size:2.2rem;
+    color:#ffd8ff;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeScene{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes auroraMove{
+    from{
+        transform:translate(-8%,-6%) rotate(0deg);
+    }
+    to{
+        transform:translate(8%,6%) rotate(25deg);
+    }
+}
+
+@keyframes floatImage{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes giftFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+    font-size:2.3rem;
+}
+
+.container{
+    flex-direction:column;
+    gap:35px;
+}
+
+.photo-frame{
+    width:280px;
+    height:360px;
+}
+
+#memoryImage{
+    height:300px;
+}
+
+.star{
+    width:58px;
+    height:58px;
+    font-size:1.6rem;
+}
+
+#giftBox{
+    font-size:6rem;
+}
+
+#musicButton{
+    width:50px;
+    height:50px;
+    font-size:20px;
+}
+
+.letter-card{
+    padding:25px;
+}
+
+}
