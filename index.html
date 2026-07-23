@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Arsh ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ==========================
+LOADER
+========================== -->
+
+<div id="loader">
+
+<h1>For Arsh ❤️</h1>
+
+<p id="loaderText">
+
+A little surprise is waiting...
+
+</p>
+
+</div>
+
+<!-- ==========================
+BACKGROUND
+========================== -->
+
+<div id="background">
+
+<div id="aurora"></div>
+
+<div id="stars"></div>
+
+<div id="particles"></div>
+
+</div>
+
+<!-- ==========================
+MUSIC
+========================== -->
+
+<button id="musicButton">
+
+🎵
+
+</button>
+
+<audio id="music" loop>
+
+<source src="assets/music/piano.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- ==========================
+APP
+========================== -->
+
+<div id="app">
+
+<!-- ==========================
+INTRO
+========================== -->
+
+<section id="intro" class="scene active">
+
+<div class="content">
+
+<h1>
+
+For Someone Special ❤️
+
+</h1>
+
+<p>
+
+Every beautiful journey begins with a single moment.
+
+Tonight...
+
+this one is for you.
+
+</p>
+
+<button id="startBtn">
+
+Begin ✨
+
+</button>
+
+</div>
+
+</section>
+<!-- ==========================
+BIRTHDAY
+========================== -->
+
+<section id="birthday" class="scene">
+
+<div class="container">
+
+<div class="photo-frame">
+
+<img src="assets/images/1.jpg" alt="Arsh" id="heroImage">
+
+</div>
+
+<div class="hero-text">
+
+<h2>Happy Birthday, Arsh ❤️</h2>
+
+<p>
+
+Today isn't just another day...
+
+It's a celebration of someone who brings kindness, smiles, and warmth wherever they go.
+
+I hope this little surprise reminds you how truly special you are.
+
+</p>
+
+<button id="readLetter">
+
+💌 Read My Letter
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+LETTER POPUP
+========================== -->
+
+<div id="letterOverlay" class="hidden">
+
+<div class="letter-card">
+
+<button id="closeLetter">
+
+✕
+
+</button>
+
+<h2>
+
+To Arsh ❤️
+
+</h2>
+
+<div id="letterBody">
+
+<!-- Typed by JavaScript -->
+
+</div>
+
+<button id="continueJourney" class="hidden">
+
+Continue Journey ✨
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ==========================
+MEMORY GALLERY
+========================== -->
+
+<section id="memories" class="scene">
+
+<div class="content">
+
+<h2>
+
+Our Beautiful Memories 📸
+
+</h2>
+
+<p>
+
+Every picture tells a story.
+
+Every memory holds a smile.
+
+</p>
+
+<div class="memory-container">
+
+<img
+
+id="memoryImage"
+
+src="assets/images/1.jpg"
+
+alt="Memory">
+
+<div class="memory-info">
+
+<h3 id="memoryTitle">
+
+The Beginning ❤️
+
+</h3>
+
+<p id="memoryCaption">
+
+Every beautiful journey starts with one unforgettable moment.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="memory-buttons">
+
+<button id="prevMemory">
+
+⬅ Previous
+
+</button>
+
+<span id="memoryCounter">
+
+1 / 9
+
+</span>
+
+<button id="nextMemory">
+
+Next ➡
+
+</button>
+
+</div>
+
+<button id="toStars">
+
+Continue ⭐
+
+</button>
+
+</div>
+
+</section>
+<!-- ==========================
+CONSTELLATION
+========================== -->
+
+<section id="starsScene" class="scene">
+
+<div class="content">
+
+<h2>Written in the Stars ⭐</h2>
+
+<p>
+
+Touch each glowing star.
+
+Every star hides a special birthday wish.
+
+</p>
+
+<div id="constellation">
+
+<button class="star" data-index="0">⭐</button>
+<button class="star" data-index="1">⭐</button>
+<button class="star" data-index="2">⭐</button>
+<button class="star" data-index="3">⭐</button>
+<button class="star" data-index="4">⭐</button>
+<button class="star" data-index="5">⭐</button>
+<button class="star" data-index="6">⭐</button>
+
+</div>
+
+<div id="wishBox">
+
+✨ Tap a star to reveal your first wish.
+
+</div>
+
+<button id="toGift" class="hidden">
+
+Continue 🎁
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================
+GIFT
+========================== -->
+
+<section id="giftScene" class="scene">
+
+<div class="content">
+
+<h2>One Last Surprise 🎁</h2>
+
+<p>
+
+Some gifts come in boxes...
+
+The best ones come from the heart.
+
+</p>
+
+<div id="giftBox">
+
+🎁
+
+</div>
+
+<div id="giftMessage" class="hidden">
+
+<h3>For You ❤️</h3>
+
+<p>
+
+May Allah bless you with happiness,
+
+good health,
+
+success,
+
+peace,
+
+countless beautiful memories,
+
+and a lifetime filled with smiles.
+
+Ameen 🤲
+
+</p>
+
+</div>
+
+<button id="toFinale" class="hidden">
+
+Final Surprise ✨
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================
+FINALE
+========================== -->
+
+<section id="finale" class="scene">
+
+<div class="content">
+
+<h1>Happy Birthday ❤️</h1>
+
+<h2>Arsh</h2>
+
+<p>
+
+Thank you for taking this little journey.
+
+I hope it brought a smile to your face.
+
+May Allah always protect you,
+
+guide you,
+
+grant every beautiful dua in your heart,
+
+and bless you with endless happiness.
+
+Ameen.
+
+</p>
+
+<h3>
+
+With lots of prayers,
+
+<br><br>
+
+— Saima ❤️
+
+</h3>
+
+<button id="replay">
+
+🔄 Replay Journey
+
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
